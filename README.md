@@ -26,13 +26,15 @@ All done. Select the container and hit details->Log on the image to watch the ma
 
 
 Command cheat sheet:
-sudo systemctl start docker.service
-sudo docker build -t valheim .
-sudo docker save valheim > valheim.tar
+	
+	Start service
+	sudo systemctl start docker.service
+	
+	Build Image
+	sudo docker build -t valheim .
+	
+	Export Image
+	sudo docker save valheim > valheim.tar
 
-
-//Nuke all images must be run as SU
-su
-docker rm $(docker ps -a -q)
-docker rmi $(docker images -q)
-exit
+	Nuke all images
+	sudo docker rmi $(docker images -q)
